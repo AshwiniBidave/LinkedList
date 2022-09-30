@@ -1,4 +1,4 @@
-package com.linkedlist;
+package com.List;
 
 import static org.junit.Assert.assertTrue;
 
