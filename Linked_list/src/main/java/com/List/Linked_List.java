@@ -1,36 +1,72 @@
 package com.List;
 
-public class Linked_List {
+public class Linked_List{
 	Node head;
-    public void Add(int data)
+	public void Add(int data)
     {
-        Node new_node = new Node(data);
+        Node node = new Node(data);
         if (this.head == null)
         {
-            this.head = new_node;
+            this.head = node;
         }
         else
         {
-            Node temp = head;
-            while (temp.next != null)
-            {
-                temp = temp.next;
-            }
-            temp.next = new_node;
+          Node temp = head;
+          while (temp.next != null)
+        {
+           temp = temp.next;
+        }
+            temp.next = node;
         }
     }
-    void Display()
+    public  Node InserAtParticularPosition(int position, int data)
     {
-        Node temp = this.head;
-        if (temp == null)
+        Node newNode = new Node(data);
+   
+        if (position < 1)
         {
-            System.out.println("LinkedList is empty.");
-            return;
+            System.out.println("Invlid position...");
         }
-        while (temp != null)
+        if (position == 1)
         {
-        	System.out.println(temp.data + " -> ");
-            temp = temp.next;
+            newNode.next = this.head;
+            head = newNode;
         }
+        else
+        {
+          while (position-- != 0)
+        {
+           if (position == 1)
+        {
+           newNode.next = this.head.next;
+           head.next = newNode;
+           break;
+        }
+           head = head.next;
+        }
+
+        if (position != 1)
+        System.out.println("Position out of range...");
+        }
+        
+        return head;
     }
-}
+      public void Display()
+    {
+       Node temp = this.head;
+       if (temp == null)
+     {
+        System.out.println("LinkedList is empty.");
+        return;
+     }
+        while (temp != null)
+     {
+        System.out.println(temp.data + " -> ");
+        temp = temp.next;
+      }
+    }
+      
+        	   
+
+ }
+            

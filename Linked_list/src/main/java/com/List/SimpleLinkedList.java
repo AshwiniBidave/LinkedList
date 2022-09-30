@@ -11,9 +11,16 @@ public class SimpleLinkedList
         System.out.println( "********Welcome to Linked_list********" );
         Linked_List list = new Linked_List();
         list.Add(56);
-        list.Add(30);
         list.Add(70);
         list.Display();
+        list.InserAtParticularPosition(2, 30);
+        System.out.println("Display After insert 30 in position 2");
+        list.Display();
+       
+		
+        
+        
+     
         
     }
 }
