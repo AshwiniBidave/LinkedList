@@ -19,38 +19,7 @@ public class Linked_List{
             temp.next = node;
         }
     }
-    public  Node InserAtParticularPosition(int position, int data)
-    {
-        Node newNode = new Node(data);
    
-        if (position < 1)
-        {
-            System.out.println("Invlid position...");
-        }
-        if (position == 1)
-        {
-            newNode.next = this.head;
-            head = newNode;
-        }
-        else
-        {
-          while (position-- != 0)
-        {
-           if (position == 1)
-        {
-           newNode.next = this.head.next;
-           head.next = newNode;
-           break;
-        }
-           head = head.next;
-        }
-
-        if (position != 1)
-        System.out.println("Position out of range...");
-        }
-        
-        return head;
-    }
       public void Display()
     {
        Node temp = this.head;
@@ -65,32 +34,24 @@ public class Linked_List{
         temp = temp.next;
       }
     }
-      Node RemoveFirstNode()
+      public void SortedList(int data)
       {
-          if (this.head == null)
+          Node newNode = new Node(data);
+          Node Current;
+          if (head == null || head.data >= newNode.data)
           {
-              return null;
+              newNode.next = head;
+              head = newNode;
           }
-          this.head = this.head.next;
-          return this.head;
-      } 
-      Node RemoveLastNode()
-      {
-          if (head == null)
+          else
           {
-              return null;
+              Current = head;
+              while (Current.next != null && Current.next.data < newNode.data)
+                  Current = Current.next;
+
+              newNode.next = Current.next;
+              Current.next = newNode;
           }
-          if (head.next == null)
-          {
-              return null;
-          }
-          Node NewNode = head;
-          while (NewNode.next.next != null)
-          {
-              NewNode = NewNode.next;
-          }
-          NewNode.next = null;
-          return head;
       }
         	   
 
