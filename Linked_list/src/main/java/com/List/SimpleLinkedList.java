@@ -12,11 +12,15 @@ public class SimpleLinkedList
         Linked_List list = new Linked_List();
        list.Add(56);
        list.Add(30);
+       list.Add(40);
        list.Add(70);
        list.Display();
-       System.out.println("nAfter Inserting Element...");
-       list.InserAtParticularPosition(3, 40);
+       System.out.println("Position of 30--> " + list.findPoistion(30));
+       list.deleteNode(40);
+       System.out.println("After Deleting Node");
        list.Display();
+       System.out.println("Linkelist Size " + list.count());
+
 		
         
         
