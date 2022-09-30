@@ -16,9 +16,10 @@ public class SimpleLinkedList
         list.InserAtParticularPosition(2, 30);
         System.out.println("Display After insert 30 in position 2");
         list.Display();
-        System.out.println("Dispaly list After Delete First Node");
-       list.RemoveFirstNode();
+        System.out.println("Dispaly list After Delete Last Node");
+       list.RemoveLastNode();
        list.Display();
+       
 		
         
         
