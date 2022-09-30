@@ -53,6 +53,42 @@ public class Linked_List{
               Current.next = newNode;
           }
       }
+      public  Node InserAtParticularPosition(int position, int data)
+      {
+          Node newNode = new Node(data);
+     
+          if (position < 1)
+          {
+              System.out.println("Invlid position...");
+          }
+          if (position == 1)
+          {
+              newNode.next = this.head;
+              head = newNode;
+          }
+          else
+          {
+        	Node  firstHead = this.head;
+            while (position-- != 0)
+          {
+             if (position == 1)
+          {
+             newNode.next = this.head.next;
+             head.next = newNode;
+             break;
+          }
+             head = head.next;
+          }
+            firstHead.next = head;
+            head = firstHead;
+
+
+          if (position != 1)
+          System.out.println("Position out of range...");
+          }
+          
+          return head;
+      }
         	   
 
  }

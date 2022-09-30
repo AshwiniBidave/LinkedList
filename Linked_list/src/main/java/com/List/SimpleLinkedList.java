@@ -10,10 +10,12 @@ public class SimpleLinkedList
     {
         System.out.println( "********Welcome to Linked_list********" );
         Linked_List list = new Linked_List();
-       list.SortedList(56);
-       list.SortedList(30);
-       list.SortedList(40);
-       list.SortedList(70);
+       list.Add(56);
+       list.Add(30);
+       list.Add(70);
+       list.Display();
+       System.out.println("nAfter Inserting Element...");
+       list.InserAtParticularPosition(3, 40);
        list.Display();
 		
         
